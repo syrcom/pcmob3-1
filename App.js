@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect, setOptions } from "react";
-import { StyleSheet, Text, View, FlatList, Button } from "react-native";
+import { StyleSheet, Text, View, FlatList, Button, ScrollView } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import BlockRGB from "./BlockRGB";
@@ -60,7 +60,7 @@ style={{height: 40, justifyContent: "center"}}>
   </TouchableOpacity>
 
 
-     <FlatList style={styles.list} data={colorArray} renderItem={renderItem} />
+     <FlatList numColumns={5} style={styles.list} data={colorArray} renderItem={renderItem} />
    </View>
  );
 }
@@ -100,14 +100,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
  container: {
-   flex: 1,
-   backgroundColor: "#fff",
-   alignItems: "center",
-   justifyContent: "center",
+  flex: 1,
+  backgroundColor: "#fff",
+  alignItems: "center",
+
+
  },
  list: {
-   width: "100%",
- },
+width: "100%" },
+
  detailText: {
    fontSize: 24,
    marginBottom: 20,
